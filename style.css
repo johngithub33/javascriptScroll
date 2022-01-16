@@ -1,0 +1,19 @@
+
+
+
+html{
+    scroll-behavior: smooth;
+    scroll-behavior: auto;
+}
+
+#sectionone{
+    width: 600px;
+    height: 400px;
+    background-color: red;
+}
+
+#sectiontwo{
+    width: 600px;
+    height: 400px;
+    background-color: blue;
+}

@@ -1,19 +1,33 @@
 
+*{
+    margin: 0;
+    padding: 0;
+}
 
-
-html{
-    scroll-behavior: smooth;
-    scroll-behavior: auto;
+body{
+    width:800px;
 }
 
 #sectionone{
     width: 600px;
     height: 400px;
     background-color: red;
+    position: relative;
 }
 
 #sectiontwo{
+    position: relative;
     width: 600px;
     height: 400px;
+    left: 10px;
+    top: 27px;
     background-color: blue;
+}
+
+.backToTop{
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
 }

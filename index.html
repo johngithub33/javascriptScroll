@@ -12,31 +12,29 @@
 
 <body>
 
-    <script>
-        // function myfunc(){
-        //     window.scroll({
-        //         top: 1000,
-        //         right: 250,
-        //         behavior: 'smooth' 
-        //     });
-        // }
+    <!-- good article on element position: 
+    https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element -->
 
-        function myfunc2(){
-            // scroll to a DOM node
-            document.getElementById('sectiontwo').scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+        <div> <button class='backToTop'> get back to top! </button></div>
 
     <div id='sectionone'>
         <h1>section one</h1>
         <a href="#sectiontwo"> scroll to section two</a>
-        <button onclick='myfunc2()'> scroll with js</button>
+        <br> <br>
+        <button class='custom'> custom scroll</button>
+        <button class='builtIn'> built in scroll </button>
+        <button class='moveEl'> move section one</button>
     </div>
 
     <div id='sectiontwo'>
         <h1>section two</h1>
         <a href="#sectionone"> scroll to section one</a>
+        <br><br>
+        <button class='bringInEl'>bring in El</button>
     </div>
+
+    <script type="module" src="script.js"> </script>
+
     
 </body>
 

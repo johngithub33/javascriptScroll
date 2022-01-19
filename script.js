@@ -175,18 +175,42 @@ function circ(timeFraction) {
 
 //window.requestAnimationFrame(callback);
 
+//easing: https://medium.com/burst/understanding-animation-with-duration-and-easing-using-requestanimationframe-7e3fd1688d6c
+//The requestAnimationFrame passes one argument to your callback. It’s a timestamp 
+//with how much milliseconds have passed since the document loaded.
+
+
+
 var frameDiv = document.querySelector('.reqAnimDiv');
 var leftpos = 0;
 
-function moveit(timestamp){
-        console.log('in reqanimationframe')
-        leftpos += 5
-        frameDiv.style.left = leftpos + 'px';
+var frameBtn = document.querySelector('.reqAnimationFrame')
+frameBtn.addEventListener('click', () => {
+    requestAnimationFrame(moveit);
+})
 
-        if(leftpos < 200) requestAnimationFrame(moveit);
+let time = 1;
+
+function moveit(timestamp){
+
+        console.log('time is: ', time);
+        console.log('timestampe is: ', timestamp)
+        time -= .01;
+        
+        setTimeout(() => {
+
+            // leftpos += 1    
+            // frameDiv.style.left = leftpos + 'px';
+
+            window.scrollBy(0,1);
+                
+            if(leftpos < 200) requestAnimationFrame(moveit);
+            
+        }, timestamp/5000);
+
 }
 
-requestAnimationFrame(moveit);
+
 
 
 

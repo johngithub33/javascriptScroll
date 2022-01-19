@@ -159,3 +159,44 @@ function quad(timeFraction) {
 function circ(timeFraction) {
     return 1 - Math.sin(Math.acos(timeFraction));
 }
+
+
+
+
+// use requestAnimationFrame
+// <button class='reqAnimationFrame'> scroll with request animation frame </button> 
+//<div class='reqAnimDiv'> req animation frame mover </div>
+
+// https://medium.com/geekculture/requestanimationframe-in-javascript-82a913cf8c46
+
+// Calling requestAnimationFrame() once is pretty meaningless most of the time. The magic happens 
+// when we call it "recursively" to construct the desired animation frame by frame, with each frame 
+// being called only when the browser is ready for it.
+
+//window.requestAnimationFrame(callback);
+
+var frameDiv = document.querySelector('.reqAnimDiv');
+var leftpos = 0;
+
+function moveit(timestamp){
+        console.log('in reqanimationframe')
+        leftpos += 5
+        frameDiv.style.left = leftpos + 'px';
+
+        if(leftpos < 200) requestAnimationFrame(moveit);
+}
+
+requestAnimationFrame(moveit);
+
+
+
+
+
+
+
+
+
+
+
+
+

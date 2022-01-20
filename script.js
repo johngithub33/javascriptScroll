@@ -182,33 +182,30 @@ function circ(timeFraction) {
 
 
 var frameDiv = document.querySelector('.reqAnimDiv');
-var leftpos = 0;
 
 var frameBtn = document.querySelector('.reqAnimationFrame')
 frameBtn.addEventListener('click', () => {
     requestAnimationFrame(moveit);
 })
 
-let time = 1;
+let count = 1;
+let distance = 20;
 
 function moveit(timestamp){
 
-        console.log('time is: ', time);
-        console.log('timestampe is: ', timestamp)
-        time -= .01;
-        
-        setTimeout(() => {
+    window.scrollBy(0,distance);
+    
+    if(distance > 1) {
+        distance /= 1.05;
+        if(distance < 1) distance = 1;
+    }
 
-            // leftpos += 1    
-            // frameDiv.style.left = leftpos + 'px';
-
-            window.scrollBy(0,1);
-                
-            if(leftpos < 200) requestAnimationFrame(moveit);
-            
-        }, timestamp/5000);
+    count++;            
+    console.log(count, distance);
+    if(count < 200) requestAnimationFrame(moveit);
 
 }
+
 
 
 
